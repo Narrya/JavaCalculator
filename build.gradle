@@ -1,0 +1,10 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'first.calc.Calc'
+
+sourceSets.main.java.srcDirs = [ 'src' ]
+
+run {
+	standardInput = System.in
+}
