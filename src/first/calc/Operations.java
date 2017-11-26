@@ -31,6 +31,5 @@ public class Operations{
 
 	public static int divide(int firstArg, int secondArg) {
 		return firstArg / secondArg;
-		
 	}
 }
