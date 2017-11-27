@@ -1,10 +1,37 @@
 apply plugin: 'java'
 apply plugin: 'application'
+apply plugin: 'java'
 
 mainClassName = 'first.calc.Calc'
 
-sourceSets.main.java.srcDirs = [ 'src' ]
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+    }
+    test {
+        java {
+            srcDirs = ['test']
+        }
+    }
+}
+
 
 run {
 	standardInput = System.in
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+ 	testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+test {
+    testLogging {
+        events "PASSED", "STARTED", "FAILED", "SKIPPED"
+    }
 }
