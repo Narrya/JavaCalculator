@@ -7,39 +7,39 @@ import org.junit.Test;
 
 public class OperationsTest {
 	@Test
-	public void additionTest()	{
+	public void additionTest() {
 		int sum = Operations.add(1, 1);
 		assertEquals(2, sum);
 	}
 
 	@Test
 	public void subtractionTest() {
-		int subtract = Operations.subtract(2,1);
+		int subtract = Operations.subtract(2, 1);
 		assertEquals(1, subtract);
 	}
 
 	@Test
-	public void multiplationTest() {
-		int multiplation = Operations.multiply(2,2);
-		assertEquals(4, multiplation);
+	public void multiplicationTest() {
+		int multiplication = Operations.multiply(2, 2);
+		assertEquals(4, multiplication);
 	}
 
 	@Test
-	public void dividationTest() {
-		int dividation = Operations.divide(2,2);
-		assertEquals(1, dividation);
+	public void divisionTest() {
+		int division = Operations.divide(2,2);
+		assertEquals(1, division);
 	}
 
 	@Test
-	public void dividationZeroTest() {
+	public void divisionZeroTest() {
 		try
-        {
-            Operations.divide(2,0);
-            fail("We should throw exception!");
-        }
-        catch(ArithmeticException e)
-        {
-            assertTrue("Exception not caught!", true);
-        }
+		{
+			Operations.divide(2,0);
+			fail("We should throw exception!");
+		}
+		catch(ArithmeticException e)
+		{
+			assertTrue("Exception not caught!", true);
+		}
 	}
 }
