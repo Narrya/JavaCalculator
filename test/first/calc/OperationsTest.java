@@ -8,25 +8,29 @@ import org.junit.Test;
 public class OperationsTest {
 	@Test
 	public void additionTest() {
-		int sum = Operations.add(1, 1);
+		Calculable op = new Addition();
+		int sum = op.execute(1, 1);
 		assertEquals(2, sum);
 	}
 
 	@Test
 	public void subtractionTest() {
-		int subtract = Operations.subtract(2, 1);
+		Calculable op = new Subtraction();
+		int subtract = op.execute(2, 1);
 		assertEquals(1, subtract);
 	}
 
 	@Test
 	public void multiplicationTest() {
-		int multiplication = Operations.multiply(2, 2);
+		Calculable op = new Multiplication();
+		int multiplication = op.execute(2, 2);
 		assertEquals(4, multiplication);
 	}
 
 	@Test
 	public void divisionTest() {
-		int division = Operations.divide(2,2);
+		Calculable op = new Division();
+		int division = op.execute(2, 2);
 		assertEquals(1, division);
 	}
 
@@ -34,7 +38,8 @@ public class OperationsTest {
 	public void divisionZeroTest() {
 		try
 		{
-			Operations.divide(2,0);
+			Calculable op = new Division();
+			op.execute(2, 0);
 			fail("We should throw exception!");
 		}
 		catch(ArithmeticException e)
