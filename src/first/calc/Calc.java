@@ -1,5 +1,6 @@
 package first.calc;
 
+import java.util.InputMismatchException;
 import first.calc.Operations;
 
 public class Calc {
@@ -8,18 +9,27 @@ public class Calc {
 
 		while (true) {
 			operation = Operations.getOperation();
-			
 			if (operation.equals("Q") || operation.equals("q")) {
 				break;
 			}
 
-			int firstArg = Operations.getArg();
-			int secondArg = Operations.getArg();
-
 			Calculable op = OperationsFactory.create(operation);
+			if (op == null) {
+				continue;
+			}
 
-			int result = op.execute(firstArg, secondArg);
-			System.out.println(result);
+			try
+			{
+				int firstArg = Operations.getArg();
+				int secondArg = Operations.getArg();
+
+				int result = op.execute(firstArg, secondArg);
+				System.out.println(result);
+			}
+			catch(InputMismatchException e)
+			{
+				continue;
+			}
 		}
 	}
 }
