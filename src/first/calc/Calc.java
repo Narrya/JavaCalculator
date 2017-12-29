@@ -1,12 +1,13 @@
 package first.calc;
 
-import java.util.InputMismatchException;
+import java.lang.NumberFormatException;
 import java.lang.ArithmeticException;
 import first.calc.Operations;
 
 public class Calc {
 	public static void main(String[] args) {
 		String operation;
+		int result = 0;
 
 		while (true) {
 			operation = Operations.getOperation();
@@ -21,13 +22,13 @@ public class Calc {
 
 			try
 			{
-				int firstArg = Operations.getArg();
-				int secondArg = Operations.getArg();
+				int firstArg = Operations.getArg(result);
+				int secondArg = Operations.getArg(result);
 
-				int result = op.execute(firstArg, secondArg);
+				result = op.execute(firstArg, secondArg);
 				System.out.println(result);
 			}
-			catch(InputMismatchException e)
+			catch(NumberFormatException e)
 			{
 				continue;
 			}

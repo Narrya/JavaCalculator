@@ -3,11 +3,16 @@ package first.calc;
 import java.util.Scanner;
 
 public class Operations{
-	public static int getArg() {
+	public static int getArg(int previousResult) {
 		System.out.println("Insert number:");
 		Scanner keyboard = new Scanner(System.in);
-		int arg = keyboard.nextInt();
-		return arg;
+		String line = keyboard.nextLine();
+
+		if (line.equals(".")) {
+			return previousResult;
+		} else {
+			return Integer.parseInt(line);
+		}
 	}
 
 	public static String getOperation() {
