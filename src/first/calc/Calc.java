@@ -33,7 +33,7 @@ public class Calc {
 			}
 			catch(ArithmeticException e)
 			{
-				System.out.println("Nie dzielimy przez zero!");
+				System.out.println("Do not divide by zero!");
 				continue;
 			}
 		}
