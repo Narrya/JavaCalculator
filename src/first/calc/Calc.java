@@ -1,6 +1,7 @@
 package first.calc;
 
 import java.util.InputMismatchException;
+import java.lang.ArithmeticException;
 import first.calc.Operations;
 
 public class Calc {
@@ -28,6 +29,11 @@ public class Calc {
 			}
 			catch(InputMismatchException e)
 			{
+				continue;
+			}
+			catch(ArithmeticException e)
+			{
+				System.out.println("Nie dzielimy przez zero!");
 				continue;
 			}
 		}

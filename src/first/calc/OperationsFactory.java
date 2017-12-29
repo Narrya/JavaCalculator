@@ -15,6 +15,9 @@ public class OperationsFactory {
 			case "*":
 				return new Multiplication();
 
+			case "%":
+				return new Modulo();
+
 			default:
 				return null;
 		}
