@@ -21,6 +21,12 @@ public class OperationsFactory {
 			case "sqrt":
 				return new Sqrt();
 
+			case "cbrt":
+				return new Cbrt();
+
+			case "^":
+				return new Power();
+
 			default:
 				return null;
 		}
