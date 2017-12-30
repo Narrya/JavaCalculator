@@ -3,21 +3,21 @@ package first.calc;
 import java.util.Scanner;
 
 public class Operations {
-	public static double getArg(double previousResult) {
+	public static double getArg(double previousResult) throws ExitException {
 		System.out.println("Insert number:");
 
 		Scanner keyboard = new Scanner(System.in);
 		String line = keyboard.nextLine();
 
-		return NumbersFactory.create(line, previousResult);
+		return FactoryNumbers.create(line, previousResult);
 	}
 
-	public static String getOperation() {
+	public static Calculable getOperation() throws ExitException {
 		System.out.println("Insert operation:");
 
 		Scanner keyboard = new Scanner(System.in);
 		String operation = keyboard.nextLine();
 
-		return operation;
+		return FactoryOperations.create(operation);
 	}
 }

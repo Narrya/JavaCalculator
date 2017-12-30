@@ -6,22 +6,17 @@ import first.calc.Operations;
 
 public class Calc {
 	public static void main(String[] args) {
-		String operation;
 		double result = 0.0;
 
 		while (true) {
-			operation = Operations.getOperation();
-			if (operation.equals("Q") || operation.equals("q")) {
-				break;
-			}
-
-			Calculable op = OperationsFactory.create(operation);
-			if (op == null) {
-				continue;
-			}
-
 			try
 			{
+				Calculable op = Operations.getOperation();
+
+				if (op == null) {
+					continue;
+				}
+
 				op.getArgs(result);
 
 				result = op.execute();
@@ -35,6 +30,10 @@ public class Calc {
 			{
 				System.out.println("Do not divide by zero!");
 				continue;
+			}
+			catch(ExitException e)
+			{
+				break;
 			}
 		}
 	}

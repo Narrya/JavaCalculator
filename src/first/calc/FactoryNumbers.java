@@ -2,8 +2,8 @@ package first.calc;
 
 import java.lang.Math;
 
-public class NumbersFactory {
-	public static double create(String numberAsString, double previousResult) {
+public class FactoryNumbers {
+	public static double create(String numberAsString, double previousResult) throws ExitException {
 		numberAsString = numberAsString.toLowerCase();
 
 		switch (numberAsString) {
@@ -15,6 +15,9 @@ public class NumbersFactory {
 
 			case ".":
 				return previousResult;
+
+			case "q":
+				throw new ExitException("Exit time!");
 
 			default:
 				return Double.parseDouble(numberAsString);

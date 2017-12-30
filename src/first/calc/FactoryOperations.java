@@ -1,7 +1,9 @@
 package first.calc;
 
-public class OperationsFactory {
-	public static Calculable create(String operation) {
+public class FactoryOperations {
+	public static Calculable create(String operation) throws ExitException {
+		operation = operation.toLowerCase();
+
 		switch (operation) {
 			case "+":
 				return new Addition();
@@ -26,6 +28,9 @@ public class OperationsFactory {
 
 			case "^":
 				return new Power();
+
+			case "q":
+				throw new ExitException("Exit time!");
 
 			default:
 				return null;
