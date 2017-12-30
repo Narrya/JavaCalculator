@@ -7,7 +7,7 @@ import first.calc.Operations;
 public class Calc {
 	public static void main(String[] args) {
 		String operation;
-		int result = 0;
+		double result = 0.0;
 
 		while (true) {
 			operation = Operations.getOperation();
@@ -22,10 +22,9 @@ public class Calc {
 
 			try
 			{
-				int firstArg = Operations.getArg(result);
-				int secondArg = Operations.getArg(result);
+				op.getArgs(result);
 
-				result = op.execute(firstArg, secondArg);
+				result = op.execute();
 				System.out.println(result);
 			}
 			catch(NumberFormatException e)

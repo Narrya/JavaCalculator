@@ -18,6 +18,9 @@ public class OperationsFactory {
 			case "%":
 				return new Modulo();
 
+			case "sqrt":
+				return new Sqrt();
+
 			default:
 				return null;
 		}

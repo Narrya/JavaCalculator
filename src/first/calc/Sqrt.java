@@ -1,15 +1,15 @@
 package first.calc;
 
-public class Division implements Calculable {
+import java.lang.Math;
+
+public class Sqrt implements Calculable {
 	private double firstArg;
-	private double secondArg;
 
 	public void getArgs(double previousResult) {
 		firstArg = Operations.getArg(previousResult);
-		secondArg = Operations.getArg(previousResult);
 	}
 
 	public double execute() {
-		return firstArg / secondArg;
+		return Math.sqrt(firstArg);
 	}
 }

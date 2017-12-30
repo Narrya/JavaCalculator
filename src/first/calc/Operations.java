@@ -2,8 +2,8 @@ package first.calc;
 
 import java.util.Scanner;
 
-public class Operations{
-	public static int getArg(int previousResult) {
+public class Operations {
+	public static double getArg(double previousResult) {
 		System.out.println("Insert number:");
 		Scanner keyboard = new Scanner(System.in);
 		String line = keyboard.nextLine();
@@ -11,7 +11,7 @@ public class Operations{
 		if (line.equals(".")) {
 			return previousResult;
 		} else {
-			return Integer.parseInt(line);
+			return Double.parseDouble(line);
 		}
 	}
 
