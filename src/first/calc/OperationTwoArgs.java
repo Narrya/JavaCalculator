@@ -5,8 +5,8 @@ public abstract class OperationTwoArgs implements Calculable {
 	protected double secondArg;
 
 	public void getArgs(double previousResult) throws ExitException {
-		firstArg = Operations.getArg(previousResult);
-		secondArg = Operations.getArg(previousResult);
+		this.firstArg = Operations.getArg(previousResult);
+		this.secondArg = Operations.getArg(previousResult);
 	}
 
 	public abstract double execute();

@@ -4,6 +4,6 @@ import java.lang.Math;
 
 public class Cbrt extends OperationOneArg {
 	public double execute() {
-		return Math.cbrt(firstArg);
+		return Math.cbrt(this.firstArg);
 	}
 }
