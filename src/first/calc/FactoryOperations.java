@@ -32,6 +32,11 @@ public class FactoryOperations {
 			case "avg":
 				return new Avg();
 
+			case "help":
+				System.out.println("Supported operations:");
+				System.out.println("+, -, /, *, %, sqrt, cbrt, ^, avg");
+				return null;
+
 			case "q":
 				throw new ExitException("Exit time!");
 
