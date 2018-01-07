@@ -29,6 +29,9 @@ public class FactoryOperations {
 			case "^":
 				return new Power();
 
+			case "avg":
+				return new Avg();
+
 			case "q":
 				throw new ExitException("Exit time!");
 
