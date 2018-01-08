@@ -32,6 +32,9 @@ public class FactoryOperations {
 			case "avg":
 				return new Avg();
 
+			case "sum":
+				return new Sum();
+
 			case "help":
 				System.out.println("Supported operations:");
 				System.out.println("+, -, /, *, %, sqrt, cbrt, ^, avg");

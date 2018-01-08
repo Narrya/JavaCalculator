@@ -1,6 +1,6 @@
 package first.calc;
 
-public class Avg extends OperationMultiArgs {
+public class Sum extends OperationMultiArgs {
 	public double execute() {
 		double sum = 0.0;
 
@@ -8,6 +8,6 @@ public class Avg extends OperationMultiArgs {
 			sum = sum + this.arguments[i];
 		}
 
-		return sum / this.count;
+		return sum;
 	}
 }
