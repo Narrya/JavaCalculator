@@ -35,6 +35,9 @@ public class FactoryOperations {
 			case "sum":
 				return new Sum();
 
+			case "median":
+				return new Median();
+
 			case "help":
 				System.out.println("Supported operations:");
 				System.out.println("+, -, /, *, %, sqrt, cbrt, ^, avg");
