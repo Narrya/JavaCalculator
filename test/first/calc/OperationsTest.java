@@ -35,6 +35,22 @@ public class OperationsTest {
 	}
 
 	@Test
+	public void medianLongTest() {
+		Calculable op = new Median();
+		long[] l = {5, 6, 1, 3, 2};
+		double median = op.execute(l);
+		Assert.assertEquals(3, median);
+	}
+
+	@Test
+	public void medianShortTest() {
+		Calculable op = new Median();
+		long[] l = {5, 1, 3, 2};
+		double median = op.execute(l);
+		Assert.assertEquals(2.5, median);
+	}
+
+	@Test
 	public void divisionZeroTest() {
 		try
 		{
